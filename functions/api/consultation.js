@@ -76,7 +76,7 @@ export async function onRequestPost({ request, env }) {
       { status: 200 }
     );
 
-  } catch (error) {
+  console.error("Consultation submission failed:", error?.message);
     console.error("Consultation submission failed");
 
     return new Response(
