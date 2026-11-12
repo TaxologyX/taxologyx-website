@@ -75,7 +75,7 @@ export async function onRequestPost({ request, env }) {
       "Thank you! Your consultation request has been received.",
       { status: 200 }
     );
-      } catch (error) {.
+      } catch (error) {
   console.error("Consultation submission failed:", error?.message);
     
 
