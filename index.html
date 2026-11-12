@@ -60,15 +60,51 @@
 
 
 
-      <button type="button" disabled
+      <button type="submit" 
         style="background:#8de000;color:#101510;padding:14px 24px;">
-        Consultation Requests Coming Soon
+        Submit Consultation Request
       </button>
     </form>
   </div>
 </section>
 
 </main><footer><div class="wrap"><span>© <span id="year">2026</span> TaxologyX. All rights reserved.</span><span>Integrity | Tax Strategy | Business Solutions</span></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear()</script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+document.getElementById("taxologyx-form").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button.textContent;
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+
+  try {
+    const response = await fetch("/api/consultation", {
+      method: "POST",
+      body: new FormData(form)
+    });
+
+    const message = await response.text();
+
+    if (!response.ok) {
+      throw new Error(message || "Submission failed");
+    }
+
+    alert("Thank you! TaxologyX has received your consultation request.");
+    form.reset();
+    if (window.turnstile) {
+      window.turnstile.reset();
+    }
+  } catch (error) {
+    alert("Your request could not be submitted. Please try again or call 806-589-7110.");
+  } finally {
+    button.disabled = false;
+    button.textContent = originalText;
+  }
+});
+</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
