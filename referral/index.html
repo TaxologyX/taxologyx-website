@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Refer a new individual or business tax preparation client to TaxologyX and earn a $75 cash reward when they qualify.">
+  <title>Referral Rewards | TaxologyX</title>
+  <style>
+    :root { color-scheme: dark; --bg:#101010; --panel:#1c1b18; --gold:#e1bd65; --text:#f8f4e9; --muted:#d1c9b7; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
+    header,footer { background:#080808; text-align:center; padding:24px 18px; }
+    .logo { color:var(--gold); font-size:32px; font-weight:800; letter-spacing:.02em; }
+    a { color:var(--gold); }
+    main { max-width:760px; padding:36px 20px 55px; margin:0 auto; }
+    h1 { text-align:center; font-size:clamp(30px,6vw,44px); line-height:1.2; margin:12px 0 20px; }
+    .gold { color:var(--gold); }
+    .intro { font-size:18px; text-align:center; }
+    .reward { text-align:center; border:1px solid #a9873d; background:#1c1a15; border-radius:16px; padding:26px; margin:30px 0; }
+    .amount { font-size:64px; line-height:1.2; font-weight:800; color:var(--gold); }
+    .reward h2 { margin:8px 0; }
+    form { padding:26px; background:var(--panel); border-radius:16px; margin-top:20px; }
+    label { display:block; margin:16px 0 6px; font-weight:700; }
+    input:not([type="checkbox"]),select { display:block; width:100%; padding:13px; font:inherit; color:#111; background:#fff; border:1px solid #777; border-radius:7px; }
+    .check { display:flex; align-items:flex-start; gap:10px; font-weight:400; }
+    .check input { width:18px; height:18px; flex:none; margin-top:5px; }
+    button { display:block; width:100%; background:var(--gold); color:#111; border:0; border-radius:8px; padding:15px; font-size:17px; font-weight:800; cursor:pointer; margin-top:24px; }
+    button:hover { background:#f2d78f; }
+    input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .small { font-size:13px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TaxologyX</div>
+    <a href="/">Back to Home</a>
+  </header>
+  <main>
+    <h1>Refer a Friend. <span class="gold">Earn $75.</span></h1>
+    <p class="intro">Know someone who needs individual or business tax preparation? Send them to TaxologyX and get rewarded!</p>
+    <section class="reward" aria-label="Referral cash reward">
+      <div class="amount">$75</div>
+      <h2>Referral Cash Reward</h2>
+      <p>Earn $75 for each qualifying new client you refer who completes and pays for eligible tax preparation services.</p>
+    </section>
+    <h2>Submit a Referral</h2>
+    <p>Complete the form below. Share the referred person's contact information only with their permission.</p>
+    <form action="https://formspree.io/f/xppdwoaa" method="POST">
+      <label for="referrer">Your Full Name</label>
+      <input id="referrer" name="referrer_name" autocomplete="name" required>
+      <label for="phone">Your Phone Number</label>
+      <input id="phone" name="referrer_phone" type="tel" autocomplete="tel" required>
+      <label for="email">Your Email (optional)</label>
+      <input id="email" name="referrer_email" type="email" autocomplete="email">
+      <label for="client">Referred Client's Name</label>
+      <input id="client" name="client_name" required>
+      <label for="contact">Referred Client's Phone or Email</label>
+      <input id="contact" name="client_contact" required>
+      <label for="service">Service Needed</label>
+      <select id="service" name="service" required>
+        <option value="">Choose a service</option>
+        <option value="Individual Tax Preparation">Individual Tax Preparation</option>
+        <option value="Business Tax Preparation">Business Tax Preparation</option>
+      </select>
+      <label class="check" for="permission">
+        <input id="permission" type="checkbox" name="permission_confirmed" value="yes" required>
+        <span>I confirm this person gave me permission to share their contact information with TaxologyX.</span>
+      </label>
+      <p class="small">Do not enter Social Security numbers, tax documents, or financial account details in this form.</p>
+      <button type="submit">Submit My Referral</button>
+    </form>
+    <p class="small">Rewards are subject to verification and program eligibility. A qualifying referral must be a new TaxologyX client who completes and pays for eligible services. No reward is earned for canceled or unpaid appointments. Additional terms may apply.</p>
+  </main>
+  <footer>&copy; TaxologyX &middot; <a href="/">Home</a></footer>
+</body>
+</html>
